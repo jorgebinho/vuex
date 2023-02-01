@@ -10,6 +10,13 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  }, data() {
+    return {
+
+    }
+  },
+  created() {
+    console.log(this.$store)    
   }
 }
 </script>
