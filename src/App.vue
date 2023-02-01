@@ -1,6 +1,7 @@
 <template>
   <AppProducts />
 
+  Valor total do carrinho R$: {{ $store.getters.total }}
   <button @click="updateUser">Atualizar perfil</button>
 </template>
 

@@ -39,6 +39,9 @@ export default createStore({
     }
   },
   getters: {
+    total(state) {
+      return state.cart.reduce((total, item) => total += item.price, 0)
+    }
   },
   actions: {
   },
