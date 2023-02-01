@@ -9,9 +9,12 @@ export default createStore({
     },
     products: []
   },
-  getters: {
-  },
   mutations: {
+    storeUser(state, data) {
+      state.user = data;
+    },
+  },
+  getters: {
   },
   actions: {
   },

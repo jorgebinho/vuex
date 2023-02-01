@@ -1,24 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <button @click="updateUser">Atualizar perfil</button>
+  <HelloWorld msg="Welcome to Your Vue.js App" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }, data() {
-    return {
-
-    }
+    HelloWorld,
   },
-  created() {
-    console.log(this.$store)    
-  }
-}
+  data() {
+    return {};
+  },
+  methods: {
+    updateUser() {
+      const newUser = {
+        first_name: "Bruno",
+        last_name: "dos Santos",
+        email: "bruno@dossantos.com",
+      };
+      this.$store.commit("storeUser", newUser);
+    },
+  },
+};
 </script>
 
 <style>
