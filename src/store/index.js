@@ -26,7 +26,7 @@ export default createStore({
     ],
     cart: []
   },
-  mutations: {
+  mutations: { //mutation é sincrona
     storeUser(state, data) {
       state.user = data;
     },
@@ -43,7 +43,10 @@ export default createStore({
       return state.cart.reduce((total, item) => total += item.price, 0)
     }
   },
-  actions: {
+  actions: { // actions são assíncronas
+    storeUser({ commit }, data) {
+      commit('storeUser', data);
+    }
   },
   modules: {
   }

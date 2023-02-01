@@ -2,6 +2,9 @@
   <AppProducts />
 
   Valor total do carrinho R$: {{ $store.getters.total }}
+  <br />
+  <br />
+  {{ $store.state.user.first_name }} {{ $store.state.user.last_name }}
   <button @click="updateUser">Atualizar perfil</button>
 </template>
 
@@ -23,7 +26,10 @@ export default {
         last_name: "dos Santos",
         email: "bruno@dossantos.com",
       };
-      this.$store.commit("storeUser", newUser);
+      // Chamando mutation
+      //this.$store.commit("storeUser", newUser);
+      // Chamando Action
+      this.$store.dispatch("storeUser", newUser);
     },
   },
 };
